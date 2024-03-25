@@ -1,0 +1,81 @@
+:root{
+  --box-shadow-10: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+  rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  --box-shadow-21: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, 
+  rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  --box-shadow-key-no-click: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, 
+  rgba(0, 0, 0, 0.2) 0px -3px 0px inset; /* Box shadow sebelum di klik */
+  --box-shadow-key-click: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, 
+  rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; /* Box shadow setelah di klik */
+
+  /* Color pallete - Writing Paper Scale */
+  --color1: rgb(236,180,148);
+  --color2: rgb(238,186,155);
+  --color3: rgb(242,194,166);
+  --color4: rgb(244,201,175);
+  --color5: rgb(241,207,187); 
+}
+
+#root{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#root *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: var(--color5);
+}
+
+#drum-machine{
+  height: 90vh;
+  min-height: 445px;
+  width: 50vw;
+  min-width: 350px;
+  padding: 5px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  box-shadow: var(--box-shadow-10);
+  background-color: var(--color4);
+}
+
+.display-wrapper, .drum-pad-wrapper{
+  background-color: var(--color3);
+}
+
+.display-wrapper{
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  box-shadow: var(--box-shadow-21);
+  font-size: 24px;
+}
+
+.drum-pad-wrapper{
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  height: 80%;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  box-shadow: var(--box-shadow-21);
+  gap: 5px;
+}
+
+.drum-pad-wrapper div:not(.drum-pad){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--box-shadow-key-no-click);
+}
